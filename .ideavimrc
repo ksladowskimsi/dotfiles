@@ -1,0 +1,60 @@
+" Define leader key
+let mapleader=" "
+
+" Yank to end of the line with Y
+nnoremap Y yg_
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Enable plugins
+set argtextobj
+set commentary
+set easymotion
+set exchange
+set functiontextobj
+set ideajoi
+set incsearch
+set highlightedyank
+set matchit
+set nerdtree
+set vim-paragraph-motion
+set peekaboo
+set quickscope
+set replacewithregister
+set surround
+set switch
+set textobj-entire
+set which-key
+
+" Format for adding nice labels in which key
+"let g:WhichKeyDesc_Buffers_NextBuffer = "<leader>bn    next-buffer"
+
+" Leader Key Mappings
+nmap <Leader>bm <action>(ToggleBookmark)
+
+nmap <Leader>gb <action>(Git.Branches)
+nmap <Leader>gc <action>(Vcs.Show.Local.Changes)
+nmap <Leader>gf <action>(Git.Fetch)
+nmap <Leader>gF <action>(Git.Pull)
+nmap <Leader>gl <action>(Vcs.Show.Log)
+nmap <Leader>gs <action>(Git.Stash)
+nmap <Leader>gS <action>(Git.Unstash)
+nmap <Leader>gw <action>(Github.Open.In.Browser)
+
+nmap <Leader>m <action>(ShowIntentionActions)
+
+nmap <Leader>ss <action>(FindInPath)
+nmap <Leader>sr <action>(ReplaceInPath)
+nmap <Leader>sc <action>(GotoClass)
+nmap <Leader>sf <action>(GotoFile)
+nmap <Leader>sv <action>(GotoSymbol)
+
+nmap <Leader>tt <action>(ToolWindowsGroup)
+nmap <Leader>ta <action>(ActivateAIAssistantToolWindow)
+nmap <Leader>tc <action>(HideAllWindows)
+nmap <Leader>tf <action>(ActivateProjectToolWindow)
+nmap <Leader>tn <action>(ActivateNuGetToolWindow)
+
+nmap <Leader>zr <action>(CollapseAllRegions)
+nmap <Leader>zR <action>(ExpandAllRegions)
