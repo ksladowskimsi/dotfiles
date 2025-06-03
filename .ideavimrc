@@ -27,12 +27,59 @@ set switch
 set textobj-entire
 set which-key
 
+" Use system clipboard
+set clipboard+=unnamed
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+"" -- Search Improvements --
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set ideajoin
+
+" Jump between methods
+nnoremap [[ <Action>(MethodUp)
+nnoremap ]] <Action>(MethodDown)
+
+" Easy visual indentation (Repeatable)
+vnoremap < <gv
+vnoremap > >gv
+
 " Format for adding nice labels in which key
 "let g:WhichKeyDesc_Buffers_NextBuffer = "<leader>bn    next-buffer"
 
 " Leader Key Mappings
-nmap <Leader>bm <action>(ToggleBookmark)
 
+" Single Key
+nmap <leader>f <action>(RecentFiles)
+nmap <Leader>i <action>(ShowHoverInfo)
+nmap <Leader>a <action>(ShowIntentionActions)
+nmap <leader>o <action>(RecentLocations)
+
+" Build/Run
+nmap <leader>bb <Action>(BuildCurrentProject)
+nmap <leader>bd <Action>(Debug)
+nmap <leader>br <Action>(Run)
+
+" Debugging
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>dl <Action>(ViewBreakpoints)
+nmap <leader>dap <Action>(DebugAttachProcess)
+nmap <leader>dar <Action>(DebugAttachRemote)
+nmap <leader>ds <Action>(StepOver)
+nmap <leader>di <Action>(StepInto)
+nmap <leader>do <Action>(StepOut)
+nmap <leader>dq <Action>(StopDebugging)
+
+" Bookmarks
+nmap <Leader>mt <action>(ToggleBookmark)
+nmap <leader>ml <Action>(Bookmarks.List)
+
+" Git/Version Control
 nmap <Leader>gb <action>(Git.Branches)
 nmap <Leader>gc <action>(Vcs.Show.Local.Changes)
 nmap <Leader>gf <action>(Git.Fetch)
@@ -42,19 +89,42 @@ nmap <Leader>gs <action>(Git.Stash)
 nmap <Leader>gS <action>(Git.Unstash)
 nmap <Leader>gw <action>(Github.Open.In.Browser)
 
-nmap <Leader>m <action>(ShowIntentionActions)
+" Refactoring
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rf <Action>(IntroduceField)
+nmap <leader>rs <Action>(ChangeSignature)
 
+" Search
 nmap <Leader>ss <action>(FindInPath)
+nmap <Leader>se <action>(SearchEverywhere)
 nmap <Leader>sr <action>(ReplaceInPath)
 nmap <Leader>sc <action>(GotoClass)
 nmap <Leader>sf <action>(GotoFile)
 nmap <Leader>sv <action>(GotoSymbol)
 
+" Code
+nmap <leader>cd <Action>(GotoDeclaration)
+nmap <leader>cy <Action>(GotoTypeDeclaration)
+nmap <leader>ci <Action>(GotoImplementation)
+nmap <leader>cu <Action>(ShowUsages)
+nmap <leader>ct <Action>(GotoTest)
+
+" Errors
+nmap <leader>en <Action>(ReSharperGotoNextErrorInSolution)
+nmap <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+
+" Tool Windows
 nmap <Leader>tt <action>(ToolWindowsGroup)
 nmap <Leader>ta <action>(ActivateAIAssistantToolWindow)
 nmap <Leader>tc <action>(HideAllWindows)
 nmap <Leader>tf <action>(ActivateProjectToolWindow)
 nmap <Leader>tn <action>(ActivateNuGetToolWindow)
+nmap <Leader>tb <action>(ActivateBookmarksToolWindow)
+nmap <Leader>te <action>(ActivateProblemsViewWindow)
 
+" Folding
 nmap <Leader>zr <action>(CollapseAllRegions)
 nmap <Leader>zR <action>(ExpandAllRegions)
