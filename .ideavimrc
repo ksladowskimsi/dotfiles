@@ -17,7 +17,7 @@ set ideajoi
 set incsearch
 set highlightedyank
 set matchit
-set nerdtree
+set NERDTree
 set vim-paragraph-motion
 set peekaboo
 set quickscope
@@ -40,6 +40,20 @@ set smartcase
 set incsearch
 set hlsearch
 set ideajoin
+set linenumber
+set showmode
+set showcmd
+set visualbell
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>\
+
+" Pane navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
 
 " Jump between methods
 nnoremap [[ <Action>(MethodUp)
@@ -49,21 +63,23 @@ nnoremap ]] <Action>(MethodDown)
 vnoremap < <gv
 vnoremap > >gv
 
+nmap s <Plug>(easymotion-prefix)
+
 " Format for adding nice labels in which key
 "let g:WhichKeyDesc_Buffers_NextBuffer = "<leader>bn    next-buffer"
 
 " Leader Key Mappings
 
 " Single Key
-nmap <leader>f <action>(RecentFiles)
 nmap <Leader>i <action>(ShowHoverInfo)
 nmap <Leader>a <action>(ShowIntentionActions)
 nmap <leader>o <action>(RecentLocations)
+nmap <leader>n <action>(NewElement)
 
 " Build/Run
-nmap <leader>bb <Action>(BuildCurrentProject)
-nmap <leader>bd <Action>(Debug)
-nmap <leader>br <Action>(Run)
+nmap <leader>xb <Action>(BuildCurrentProject)
+nmap <leader>xd <Action>(Debug)
+nmap <leader>xr <Action>(Run)
 
 " Debugging
 nmap <leader>db <Action>(ToggleLineBreakpoint)
@@ -76,8 +92,9 @@ nmap <leader>do <Action>(StepOut)
 nmap <leader>dq <Action>(StopDebugging)
 
 " Bookmarks
-nmap <Leader>mt <action>(ToggleBookmark)
-nmap <leader>ml <Action>(Bookmarks.List)
+nmap <Leader>bb <action>(ToggleBookmark)
+nmap <Leader>bm <action>(ToggleBookmarkWithMnemonic)
+nmap <leader>bl <Action>(ShowBookmarks)
 
 " Git/Version Control
 nmap <Leader>gb <action>(Git.Branches)
@@ -98,6 +115,7 @@ nmap <leader>rf <Action>(IntroduceField)
 nmap <leader>rs <Action>(ChangeSignature)
 
 " Search
+nmap <leader>f <action>(RecentFiles)
 nmap <Leader>ss <action>(FindInPath)
 nmap <Leader>se <action>(SearchEverywhere)
 nmap <Leader>sr <action>(ReplaceInPath)
@@ -128,3 +146,9 @@ nmap <Leader>te <action>(ActivateProblemsViewWindow)
 " Folding
 nmap <Leader>zr <action>(CollapseAllRegions)
 nmap <Leader>zR <action>(ExpandAllRegions)
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wc <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
