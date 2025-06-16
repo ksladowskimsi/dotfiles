@@ -61,5 +61,91 @@ vnoremap > >gv
 nmap s <Plug>(easymotion-prefix)
 vmap s <Plug>(easymotion-prefix)
 
-nnoremap <Space> :action LeaderAction<cr>
-vnoremap <Space> :action LeaderAction<cr>
+" Leader Map
+let mapleader=" "
+
+map <leader>a <Action>(ShowIntentionActions)
+
+map <leader>bb <Action>(ToggleBookmark)
+map <leader>bm <Action>(ToggleBookmarkWithMnemonic)
+
+map <leader>ca <Action>(InspectCode)
+map <leader>cd <Action>(GoToDeclaration)
+map <leader>cf <Action>(ReformatCode)
+map <leader>ci <Action>(GotoImplementation)
+map <leader>co <Action>(OptimizeImports)
+map <leader>cs <Action>(FileStructurePopup)
+map <leader>ct <Action>(GoToTest)
+map <leader>cu <Action>(ShowUsages)
+
+map <leader>dap <Action>(DebugAttachProcess)
+map <leader>dar <Action>(DebugAttachRemote)
+map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>di <Action>(StepInto)
+map <leader>dl <Action>(ViewBreakpoints)
+map <leader>do <Action>(StepOut)
+map <leader>dq <Action>(StopDebugging)
+map <leader>ds <Action>(StepOver)
+
+map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
+map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+
+map <leader>f <Action>(RecentFiles)
+
+map <leader>gb <Action>(Git.Branches)
+map <leader>gc <Action>(Vcs.Show.Local.Changes)
+map <leader>gf <Action>(Git.Fetch)
+map <leader>gF <Action>(Git.Pull)
+map <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gm <Action>(Git.Configure.Remotes)
+map <leader>gr <Action>(Git.Rebase)
+map <leader>gs <Action>(Git.Stash)
+map <leader>gS <Action>(Git.Unstash)
+map <leader>gw <Action>(Github.Open.In.Browser)
+
+map <leader>i <Action>(ShowHoverInfo)
+map <leader>n <Action>(NewElement)
+map <leader>o <Action>(RecentLocations)
+
+map <leader>rf <Action>(IntroduceField)
+map <leader>rg <Action>(Generate)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rn <Action>(RenameElement)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rv <Action>(IntroduceVariable)
+
+map <leader>sc <Action>(GotoClass)
+map <leader>se <Action>(SearchEverywhere)
+map <leader>sf <Action>(GotoFile)
+map <leader>sr <Action>(ReplaceInPath)
+map <leader>ss <Action>(FindInPath)
+map <leader>sv <Action>(GotoSymbol)
+
+map <leader>ta <Action>(ActivateAIAssistantToolWindow)
+map <leader>tb <Action>(ActivateBookmarksToolWindow)
+map <leader>tc <Action>(ActivateTestCoverageToolWindow)
+map <leader>te <Action>(ActivateEndpointsToolWindow)
+map <leader>tf <Action>(ActivateProjectToolWindow)
+map <leader>tg <Action>(ActivateVersionControlToolWindow)
+map <leader>th <Action>(HideAllWindows)
+map <leader>tn <Action>(ActivateNuGetToolWindow)
+map <leader>tp <Action>(ActivateProblemsViewWindow)
+map <leader>ts <Action>(ActivateTerminalToolWindow)
+map <leader>tt <Action>(ToolWindowsGroup)
+map <leader>tT <Action>(ActivateUnitTestsToolWindow)
+
+map <leader>xb <Action>(BuildCurrentProject)
+map <leader>xc <Action>(CleanSolutionAction)
+map <leader>xd <Action>(Debug)
+map <leader>xr <Action>(Run)
+
+map <leader>ww <C-W>w
+map <leader>wc <C-W>c
+map <leader>ws <C-W>s
+map <leader>wv <C-W>v
+
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+
+map <leader>= <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
